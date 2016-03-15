@@ -1,0 +1,63 @@
+/* iterate over each theme and create a CSS class with the theme's properties */
+@for $i from 1 through 2
+
+  /* here are the names and dynamic properties for each theme class */
+  $name: nth(('maestrano', 'nab'), $i)
+  $navbar-bg: nth(($darkblue, black), $i)
+  $navbar-color: nth(($lightblue, white), $i)
+  $navbar-color-hover: nth((white, darken(white, 4%)), $i)
+  $btn-warning: nth(($purple, #be0d00), $i)
+  $btn-primary: nth(($fluroblue, #CF4C00), $i)
+  $navbar-logo: nth(('logos/default.png', 'logos/nab/nab-logo.jpg'), $i)
+  $navbar-logo-width: nth((150px, 150px), $i)
+  $navbar-logo-height: nth((51px, 51px), $i)
+  $link-step-bg: nth((cornflowerblue, #CF4C00), $i)
+  $link-step-logo: nth(('logos/default-white.png', 'logos/nab/nab-logo.jpg'), $i)
+  $link-step-logo-width: nth((206px, 150px), $i)
+
+  body.#{$name}
+    .navbar-inverse
+      background-color: $navbar-bg
+      border-color: $navbar-bg
+      li a
+        color: $navbar-color
+        &:hover,&:focus
+          color: $navbar-color-hover
+
+    .footer
+      background-color: $navbar-bg
+      .copyright
+        color: $navbar-color
+
+    .btn-warning
+      background-color: $btn-warning
+      border-color: darken($btn-warning,4%)
+      &:hover,&:focus,&:active
+        background-color: darken($btn-warning,8%)
+        border-color: darken($btn-warning,12%)
+
+    .btn-primary
+      background-color: $btn-primary
+      border-color: darken($btn-primary,4%)
+      &:hover,&:focus,&:active
+        background-color: darken($btn-primary,8%)
+        border-color: darken($btn-primary,12%)
+
+    .navbar
+      .logo
+        background: url($navbar-logo)
+        background-size: $navbar-logo-width $navbar-logo-height
+        background-repeat: no-repeat
+        width: $navbar-logo-width
+        height: $navbar-logo-height
+
+    .link-step
+      .logo
+        background: url($link-step-logo)
+        background-size: $link-step-logo-width 51px
+        background-repeat: no-repeat
+        background-position: center
+        height: 51px
+
+      .link-step-number .link-step-badge
+        background-color: $link-step-bg
