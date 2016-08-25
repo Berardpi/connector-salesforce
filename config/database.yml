@@ -19,13 +19,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  url: <%=  ENV['DATABASE_URL'] %>
-  encoding: unicode
+  adapter: mysql2
+  url: <%=  ENV['MYSQL_URL'] %>
   pool: 5
 
 uat:
-  adapter: postgresql
-  url: <%=  ENV['DATABASE_URL'] %>
-  encoding: unicode
+  adapter: mysql2
+  url: <%=  ENV['MYSQL_URL'] %>
   pool: 5

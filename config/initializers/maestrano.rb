@@ -1,4 +1,4 @@
-%w(default maestrano-uat nab-uat nab-production).each do |tenant|
+%w(default maestrano-uat nab-uat nab-production nex-sb).each do |tenant|
   Maestrano[tenant].configure do |config|
 
     # ==> Environment configuration

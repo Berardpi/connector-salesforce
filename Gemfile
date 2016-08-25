@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.2.3', :engine => 'jruby', :engine_version => '9.0.5.0'
+ruby '2.3.1'
 
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.7'
 gem 'turbolinks', '~> 2.5'
 gem 'jquery-rails'
 gem 'puma'
@@ -32,7 +32,8 @@ gem 'redis-rails'
 group :production, :uat do
   gem 'rails_12factor'
   gem 'activerecord-jdbcpostgresql-adapter', :platforms => :jruby
-  gem 'pg', :platforms => :ruby
+  # gem 'pg', :platforms => :ruby
+  gem 'mysql', platforms: :ruby
 end
 
 group :test, :develpment do
